@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 49d4ad4326ec54147a7197861f829f59
+timeCreated: 1497192088
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bn_Core
+    100002: Bn_Mid
+    100004: Bn_Tip
+    100006: //RootNode
+    100008: Cannon_Collision
+    100010: CannonBase
+    100012: CannonTurret
+    100014: Control_Base
+    100016: Control_Turret
+    100018: Control_TurretMotion
+    100020: FireTarget
+    400000: Bn_Core
+    400002: Bn_Mid
+    400004: Bn_Tip
+    400006: //RootNode
+    400008: Cannon_Collision
+    400010: CannonBase
+    400012: CannonTurret
+    400014: Control_Base
+    400016: Control_Turret
+    400018: Control_TurretMotion
+    400020: FireTarget
+    2300000: Cannon_Collision
+    2300002: CannonBase
+    3300000: Cannon_Collision
+    3300002: CannonBase
+    4300000: CannonTurret
+    4300002: CannonBase
+    4300004: Cannon_Collision
+    7400000: Fire
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: CannonTurret
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fire
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cannon_Collision
+        weight: 1
+      - path: Control_Base
+        weight: 1
+      - path: Control_Base/CannonBase
+        weight: 1
+      - path: Control_Base/Control_Turret
+        weight: 1
+      - path: Control_Base/Control_Turret/Control_TurretMotion
+        weight: 1
+      - path: Control_Base/Control_Turret/Control_TurretMotion/Bn_Core
+        weight: 1
+      - path: Control_Base/Control_Turret/Control_TurretMotion/Bn_Mid
+        weight: 1
+      - path: Control_Base/Control_Turret/Control_TurretMotion/Bn_Tip
+        weight: 1
+      - path: Control_Base/Control_Turret/Control_TurretMotion/CannonTurret
+        weight: 1
+      - path: Control_Base/Control_Turret/FireTarget
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.02
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
