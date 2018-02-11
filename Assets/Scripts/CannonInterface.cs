@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class CannonInterface : MonoBehaviour 
@@ -9,6 +10,9 @@ public class CannonInterface : MonoBehaviour
 
     [SerializeField]
     CannonController cannon;
+
+    [SerializeField]
+    Text timeOfFlightText;
 
     [SerializeField]
     float defaultFireSpeed = 35;
@@ -43,6 +47,8 @@ public class CannonInterface : MonoBehaviour
         {
             cannon.Fire();
         }
+
+        timeOfFlightText.text = Mathf.Clamp(cannon.lastShotTimeOfFlight - (Time.time - cannon.lastShotTime), 0, float.MaxValue).ToString("F3");
     }
 
     public void SetInitialFireAngle(string angle)

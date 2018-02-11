@@ -50,6 +50,23 @@ public static class ProjectileMath
     }
 
     /// <summary>
+    /// Calculates how long a projectile will stay in the air before reaching its target
+    /// </summary>
+    /// <param name="speed">Initial speed of the projectile</param>
+    /// <param name="angle">Initial launch angle in radians</param>
+    /// <param name="yOffset">Elevation of the target with respect to the initial fire position</param>
+    /// <param name="gravity">Downward acceleration in m/s^2</param>
+    /// <returns></returns>
+    public static float TimeOfFlight(float speed, float angle, float yOffset, float gravity)
+    {
+        float ySpeed = speed * Mathf.Sin(angle);
+
+        float time = (ySpeed + Mathf.Sqrt((ySpeed * ySpeed) + 2 * gravity * yOffset)) / gravity;
+
+        return time;
+    }
+
+    /// <summary>
     /// Samples a series of points along a projectile arc
     /// </summary>
     /// <param name="iterations">Number of points to sample</param>

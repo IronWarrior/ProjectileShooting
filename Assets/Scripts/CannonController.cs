@@ -31,8 +31,10 @@ public class CannonController : MonoBehaviour
 
     private float currentSpeed;
     private float currentAngle;
+    private float currentTimeOfFlight;
 
-    private float lastShotTime;
+    public float lastShotTime { get; private set; }
+    public float lastShotTimeOfFlight { get; private set; }
 
     public void SetTargetWithAngle(Vector3 point, float angle)
     {
@@ -47,6 +49,8 @@ public class CannonController : MonoBehaviour
 
         projectileArc.UpdateArc(currentSpeed, distance, Physics.gravity.magnitude, currentAngle * Mathf.Deg2Rad, direction, true);
         SetTurret(direction, currentAngle);
+
+        currentTimeOfFlight = ProjectileMath.TimeOfFlight(currentSpeed, currentAngle * Mathf.Deg2Rad, yOffset, Physics.gravity.magnitude);
     }
 
     public void SetTargetWithSpeed(Vector3 point, float speed, bool useLowAngle)
@@ -66,6 +70,8 @@ public class CannonController : MonoBehaviour
 
         projectileArc.UpdateArc(speed, distance, Physics.gravity.magnitude, currentAngle, direction, targetInRange);
         SetTurret(direction, currentAngle * Mathf.Rad2Deg);
+
+        currentTimeOfFlight = ProjectileMath.TimeOfFlight(currentSpeed, currentAngle, -yOffset, Physics.gravity.magnitude);
     }
 
     public void Fire()
@@ -78,6 +84,8 @@ public class CannonController : MonoBehaviour
             Instantiate(cannonFirePrefab, smokePuffPoint.position, Quaternion.LookRotation(turret.up));
 
             lastShotTime = Time.time;
+            lastShotTimeOfFlight = currentTimeOfFlight;
+
             anim.Rewind();
             anim.Play();
         }
