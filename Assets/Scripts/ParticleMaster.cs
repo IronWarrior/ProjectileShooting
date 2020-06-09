@@ -17,8 +17,12 @@ public class ParticleMaster : MonoBehaviour {
 
     private List<ParticleSystem> particles;
 
+    private AudioSource audioSource ;
+    
     void Awake()
     {
+        
+        audioSource =GetComponent<AudioSource>();
         particles = new List<ParticleSystem>();
 
         foreach (Transform child in transform)
@@ -61,7 +65,7 @@ public class ParticleMaster : MonoBehaviour {
 
     void Update()
     {
-        if (waitForAudioSource && GetComponent<AudioSource>() && GetComponent<AudioSource>().isPlaying)
+        if (waitForAudioSource && audioSource !=null && audioSource.isPlaying)
             return;
 
         foreach (var particle in particles)
